@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="signUpForm.js" defer></script>
+</head>
+
+<body>
+    <div class="hero-image">
+        <div class="quote">
+            <q>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, voluptates.</q>
+            <br>
+            <cite>not Albert Einsteins</cite>
+        </div>
+    </div>
+
+    <div class="sign-up">
+        <img class="logo" src="images/logo.svg" alt="Logo">
+
+        <h1>Sign-up</h1>
+
+        <form action="#">
+            <div class="input">
+                <input type="text" name="first-name" id="first-name" placeholder=" ">
+                <label for="first-name">First Name</label>
+                <small class="error-message"></small>
+            </div>
+
+            <div class="input">
+                <input type="text" name="last-name" id="last-name" placeholder=" ">
+                <label for="last-name">Last Name</label>
+                <small class="error-message"></small>
+            </div>
+
+            <div class="input">
+                <input type="text" name="email" id="email" placeholder=" ">
+                <label for="email">Email</label>
+                <small class="error-message"></small>
+            </div>
+
+            <div class="input">
+                <input type="text" name="phone-number" id="phone-number" placeholder=" ">
+                <label for="phone-number">Phone Number <span>(optional)</span></label>
+                <small class="error-message"></small>
+            </div>
+
+            <div class="input">
+                <input type="password" name="password" id="password" aria-describedby="password-validation"
+                    placeholder=" ">
+                <label for="password">Password</label>
+                <small class="error-message"></small>
+            </div>
+
+            <div class="input">
+                <input type="password" name="confirm-password" id="confirm-password" placeholder=" ">
+                <label for="confirm-password">Confirm Password</label>
+                <small class="error-message"></small>
+            </div>
+
+            <button type="submit">Create Account</button>
+        </form>
+
+        <p class="to-log-in">Already have an account? <a href="#">Log in</a></p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+/* CSS resets */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html,
+body {
+    height: 100%;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+
+/* Utility Classes */
+
+
+/* Styling Elements */
+body {
+    display: grid;
+    grid-template-columns: 4.5fr 5.5fr;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+.hero-image {
+    background: url("images/hero-image.jpg") no-repeat center / cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote {
+    background: #30303074;
+    color: white;
+    width: 80%;
+    padding: 1.5rem;
+}
+
+.quote q {
+    font-size: 1.5rem;
+}
+
+.quote cite {
+    float: right;
+}
+
+.quote cite::after,
+.quote cite::before {
+    content: ' — ';
+}
+
+.sign-up {
+    padding: 3rem;
+}
+
+.sign-up .logo {
+    width: 5rem;
+}
+
+.sign-up h1 {
+    font-size: 3rem;
+    margin: 2rem 0;
+}
+
+
+/* Form styling */
+.sign-up form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+.input {
+    --padding: .5em;
+    position: relative;
+    border-bottom: 2px solid #000;
+}
+
+.input.error {
+    border-bottom: 2px solid red;
+}
+
+.input .error-message {
+    color: red;
+    padding: .3em 0;
+    position: absolute;
+    left: var(--padding);
+    top: 100%;
+}
+
+.input>label,
+.input>input {
+    font-size: .9rem;
+    width: 100%;
+}
+
+.input>input {
+    padding: var(--padding);
+    border: none;
+    outline: none;
+}
+
+.input>label {
+    text-transform: uppercase;
+    color: #30303074;
+
+    position: absolute;
+    top: 50%;
+    left: var(--padding);
+    translate: 0 -50%;
+
+    pointer-events: none;
+    transition: .2s;
+    white-space: nowrap;
+}
+
+.input>label>span {
+    text-transform: lowercase;
+}
+
+input:focus+label,
+input:not(:placeholder-shown)+label {
+    font-size: .6rem;
+    color: #000;
+    top: 0;
+    translate: 0 -100%;
+}
+
+button[type=submit] {
+    padding: 1em 1.5em;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+button[type=submit]:is(:hover, :focus) {
+    background: #1f1f1f;
+}
+
+.to-log-in {
+    margin: 1em;
+}
+
+.to-log-in a:hover {
+    text-decoration: underline;
+}
