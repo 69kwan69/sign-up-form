@@ -12,9 +12,11 @@ function displayValidation(input, message = '') {
     const inputWrapper = input.parentElement
 
     if (!message) {
+        inputWrapper.classList.add('success');
         inputWrapper.classList.remove('error');
     } else {
         inputWrapper.classList.add('error');
+        inputWrapper.classList.remove('success');
     }
 
     inputWrapper.querySelector('.error-message').textContent = message;
@@ -96,14 +98,56 @@ form.addEventListener('submit', e => {
 })
 
 firstNameInput.addEventListener('input', () => {
-    nameValidation(firstNameInput);
+    if (firstNameInput.parentElement.classList.contains('success') || firstNameInput.parentElement.classList.contains('error')) {
+        nameValidation(firstNameInput);
+    }
 })
 
 lastNameInput.addEventListener('input', () => {
+    if (lastNameInput.parentElement.classList.contains('success') || lastNameInput.parentElement.classList.contains('error')) {
+        nameValidation(lastNameInput);
+    }
+})
+
+emailInput.addEventListener('input', () => {
+    if (emailInput.parentElement.classList.contains('success') || emailInput.parentElement.classList.contains('error')) emailValidation();
+})
+
+phoneNumberInput.addEventListener('input', () => {
+    if (phoneNumberInput.parentElement.classList.contains('success') || phoneNumberInput.parentElement.classList.contains('error')) phoneNumberValidation();
+})
+
+passwordInput.addEventListener('input', () => {
+    if (passwordInput.parentElement.classList.contains('success') || passwordInput.parentElement.classList.contains('error')) passwordValidation();
+})
+
+confirmPasswordInput.addEventListener('input', () => {
+    if (confirmPasswordInput.parentElement.classList.contains('success') || confirmPasswordInput.parentElement.classList.contains('error')) confirmPasswordValidation();
+})
+
+
+
+firstNameInput.addEventListener('blur', () => {
+    nameValidation(firstNameInput);
+})
+
+lastNameInput.addEventListener('blur', () => {
     nameValidation(lastNameInput);
 })
 
-// emailInput.addEventListener('input', emailValidation)
-// phoneNumberInput.addEventListener('input', phoneNumberValidation)
-// passwordInput.addEventListener('input', passwordValidation)
-// confirmPasswordInput.addEventListener('input', confirmPasswordValidation)
+emailInput.addEventListener('blur', () => {
+    emailValidation();
+})
+
+phoneNumberInput.addEventListener('blur', () => {
+    phoneNumberValidation();
+})
+
+passwordInput.addEventListener('blur', () => {
+    passwordValidation();
+})
+
+confirmPasswordInput.addEventListener('blur', () => {
+    confirmPasswordValidation();
+})
+
